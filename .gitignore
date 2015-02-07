@@ -1,5 +1,5 @@
-node_modules
-dist
-.tmp
-.sass-cache
-bower_components
+# http://stackoverflow.com/a/8594971/1120798
+/*
+/*/
+!/dist/
+!/dist-yeoman-angular-clean/
