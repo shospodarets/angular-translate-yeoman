@@ -10,4 +10,4 @@ $ grunt  - to build the project
 
 $ grunt serve  - for preview
 
-### <b>[Demo](http://malyw.github.io/angular-translate-asynchronous-loading/dist/)</b>
+### <b>[Demo](http://malyw.github.io/angular-translate-yeoman/dist/)</b>
