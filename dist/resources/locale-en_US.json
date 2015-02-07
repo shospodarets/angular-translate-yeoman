@@ -1,0 +1,30 @@
+{
+  "views.index.Home": "Home",
+  "views.index.About": "About",
+  "views.index.Contact": "Contact",
+  "views.index.from the Yeoman team": "from the Yeoman team",
+
+  "views.main.'Allo, 'Allo!": "'Allo, 'Allo!",
+  "views.main.I'm Yeoman": "I'm Yeoman",
+  "views.main.Always a pleasure scaffolding your apps.": "Always a pleasure scaffolding your apps.",
+  "views.main.Splendid!": "Splendid!",
+  "views.main.HTML5 Boilerplate": "HTML5 Boilerplate",
+  "views.main.HTML5 Boilerplate description": "HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.",
+  "views.main.Angular": "Angular",
+  "views.main.Angular description": "AngularJS is a toolset for building the framework most suited to your application development.",
+  "views.main.Karma": "Karma",
+  "views.main.Karma description": "Spectacular Test Runner for JavaScript.",
+
+  "views.about.My name is...": "My name is Sergey Gospodarets.",
+  "views.about.I'm Web Developer and...": "I'm Web Developer and software engineer with vast experience in Front-End related stuff.",
+  "views.about.Author of": "Author of",
+  "views.about.Have successful experience...": "Have successful experience creating Mobile Web Applications from scratch to more than 50k. downloads (as Manager, Developer, Tester and Publisher).",
+  "views.about.JS, HTML and CSS enthusiast...": "JS, HTML and CSS enthusiast. Enjoying life :)",
+
+  "views.contacts.Follow me on": "Follow me on",
+  "views.contacts.Fork me on": "Fork me on",
+  "views.contacts.My": "My",
+
+
+  "directives.language-select.Language": "Language"
+}
