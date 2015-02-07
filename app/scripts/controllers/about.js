@@ -9,6 +9,7 @@
  */
 angular.module('translateApp')
   .controller('AboutCtrl', function ($scope) {
+    // Yeoman part (for tests)
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

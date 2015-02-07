@@ -1,0 +1,30 @@
+{
+  "views.index.Home": "Главная",
+  "views.index.About": "Обо мне",
+  "views.index.Contact": "Контакты",
+  "views.index.from the Yeoman team": "от команды Yeoman",
+
+  "views.main.'Allo, 'Allo!": "'Алло, 'Алло!",
+  "views.main.I'm Yeoman": "Я- Yeoman",
+  "views.main.Always a pleasure scaffolding your apps.": "Всегда приятно быть основой для ваших приложений.",
+  "views.main.Splendid!": "Отлично!",
+  "views.main.HTML5 Boilerplate": "HTML5 Boilerplate",
+  "views.main.HTML5 Boilerplate description": "HTML5 Boilerplate- это профессиональный front-end для создания быстрых, надежных и адаптивных веб-приложений или сайтов.",
+  "views.main.Angular": "Angular",
+  "views.main.Angular description": "AngularJS- это набор инструментов для создания фреймворка, который наиболее подходит вам для разработки приложений.",
+  "views.main.Karma": "Karma",
+  "views.main.Karma description": "Великолепный инструмент для запуска JavaScript тестов.",
+
+  "views.about.My name is...": "Меня зовут Сергей Господарец.",
+  "views.about.I'm Web Developer and...": "Я- веб-разработчик и software инженер с большим опытом в области Front-End.",
+  "views.about.Author of": "Author of",
+  "views.about.Have successful experience...": "Имею успешный опыт создания мобильного веб-приложения от идеи и до более 50 тысяч скачиваний (как менеджер, разработчик, тестер и publisher).",
+  "views.about.JS, HTML and CSS enthusiast...": "JS, HTML and CSS энтузиаст. Наслаждаюсь жизнью :)",
+
+  "views.contacts.Follow me on": "Подпишись на мой",
+  "views.contacts.Fork me on": "Создай Fork на",
+  "views.contacts.My": "Мой",
+
+
+  "directives.language-select.Language": "Язык"
+}

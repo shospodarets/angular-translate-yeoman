@@ -1,0 +1,32 @@
+// Adds CSS-animated circle loader
+@mixin circleLoader($size: 24px, $color: #fff, $opacity: 0.8) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  opacity: $opacity;
+  content: '';
+  border-radius: 50%;
+
+  font-size: $size/4;
+  width: 1em;
+  height: 1em;
+  margin: -0.5em 0 0 -0.5em;
+
+  box-shadow: 0 -1.6em 0 0 rgba($color, 1),
+  -1.12em -1.12em 0 0 rgba($color, .75),
+  -1.6em 0 0 0 rgba($color, .50),
+  -1.12em 1.12em 0 0 rgba($color, .25);
+
+  animation: .85s circle-loader steps(8) infinite;
+  @content;
+}
+
+@keyframes circle-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

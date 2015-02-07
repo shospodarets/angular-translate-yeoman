@@ -1,0 +1,23 @@
+.view-about {
+  .image {
+    transition: all 2s;
+    overflow: hidden;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .text {
+    overflow: hidden;
+  }
+
+  [lang="ru_RU"] & {
+    // is applied only when "ru_RU" locale is selected
+    .image {
+      width: 40%;
+      float: left;
+      margin-right: 20px;
+    }
+  }
+}

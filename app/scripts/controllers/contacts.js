@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name translateApp.controller:MainCtrl
+ * @name translateApp.controller:ContactsCtrl
  * @description
- * # MainCtrl
+ * # ContactsCtrl
  * Controller of the translateApp
  */
 angular.module('translateApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('ContactsCtrl', function ($scope) {
     // Yeoman part (for tests)
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

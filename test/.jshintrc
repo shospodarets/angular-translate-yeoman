@@ -18,6 +18,7 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
+  "multistr": true,
   "globals": {
     "after": false,
     "afterEach": false,
