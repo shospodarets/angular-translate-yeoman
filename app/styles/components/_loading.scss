@@ -1,0 +1,12 @@
+// show/hide parts of the app during the loading
+html.app-loading {
+  [hidden-when-loading], .hidden-when-loading {
+    display: none !important;
+  }
+}
+
+html:not(.app-loading) {
+  [shown-when-loading], .shown-when-loading {
+    display: none !important;
+  }
+}

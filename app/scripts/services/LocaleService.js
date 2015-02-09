@@ -33,14 +33,29 @@ angular.module('translateApp')
         console.error('Locale name "' + locale + '" is invalid');
         return;
       }
+      startLoadingAnimation();
       currentLocale = locale;
       $translate.use(locale);
     };
 
+    /**
+     * Stop application loading animation when translations are loaded
+     */
+    var $html = angular.element('html');
+    var LOADING_CLASS = 'app-loading';
+
+    function startLoadingAnimation() {
+      $html.addClass(LOADING_CLASS);
+    }
+
+    function stopLoadingAnimation() {
+      $html.removeClass(LOADING_CLASS);
+    }
+
     // EVENTS
     $rootScope.$on('$translateChangeSuccess', function (event, data) {
-      // set "lang" attribute to html
-      document.documentElement.setAttribute('lang', data.language);
+      document.documentElement.setAttribute('lang', data.language);// sets "lang" attribute to html
+      stopLoadingAnimation();
     });
 
     return {

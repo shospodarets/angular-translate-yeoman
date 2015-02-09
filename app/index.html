@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" ng-app="translateApp">
+<html class="no-js app-loading" ng-app="translateApp">
 <head>
   <meta charset="utf-8">
   <title>AngularJS app translation</title>
@@ -21,10 +21,10 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div id="app-loading-wrapper">
+<div id="app-loading-wrapper" shown-when-loading>
   <div class="app-loading"></div>
 </div>
-<div class="container app-loading-hidden">
+<div class="container" hidden-when-loading>
   <div class="header">
     <div class="clearfix">
       <div class="pull-right">
