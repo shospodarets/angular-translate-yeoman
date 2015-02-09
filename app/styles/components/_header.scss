@@ -1,0 +1,15 @@
+.navbar-header .navbar-toggle {
+  float: left;
+  margin-left: ($grid-gutter-width / 2);
+}
+
+.language-select {
+  $height: $font-size-base*$line-height-base + 14px;
+  line-height: $height;
+  margin-top: 8px;
+
+  select {
+    -webkit-appearance: menulist-button;
+    height: $height;
+  }
+}

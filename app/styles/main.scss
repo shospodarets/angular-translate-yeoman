@@ -4,8 +4,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 @import "mixins";
+@import "components/header";
 @import "views/about";
-@import "components/language-select";
 @import "components/loading";
 
 .browsehappy {
@@ -15,10 +15,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-.container {
-  padding-top: 20px;
-  padding-bottom: 20px;
+body {
+  padding: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -32,6 +30,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {

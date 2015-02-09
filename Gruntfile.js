@@ -1,4 +1,4 @@
-// Generated on 2015-01-26 using generator-angular 0.10.0
+// Generated on 2015-02-09 using generator-angular 0.11.0
 'use strict';
 
 // # Globbing
@@ -165,7 +165,23 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath: /\.\.\//
+        ignorePath:  /\.\.\//
+      },
+      test: {
+        devDependencies: true,
+        src: '<%= karma.unit.configFile %>',
+        ignorePath:  /\.\.\//,
+        fileTypes:{
+          js: {
+            block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+              detect: {
+                js: /'(.*\.js)'/gi
+              },
+              replace: {
+                js: '\'{{filePath}}\','
+              }
+            }
+          }
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -197,7 +213,7 @@ module.exports = function (grunt) {
       },
       server: {
         options: {
-          debugInfo: true
+          sourcemap: true
         }
       }
     },
@@ -224,7 +240,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat'],
+              js: ['concat', 'uglifyjs'],
               css: ['cssmin']
             },
             post: {}
@@ -238,7 +254,11 @@ module.exports = function (grunt) {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
-        assetsDirs: ['<%= yeoman.dist %>', '<%= yeoman.dist %>/images']
+        assetsDirs: [
+          '<%= yeoman.dist %>',
+          '<%= yeoman.dist %>/images',
+          '<%= yeoman.dist %>/styles'
+        ]
       }
     },
 
@@ -255,19 +275,15 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    uglify: {
-      dist: {
-        options: {
-          mangle: false
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>/scripts',
-          src: '**/*.js',
-          dest: '<%= yeoman.dist %>/scripts'
-        }]
-      }
-    },
+    // uglify: {
+    //   dist: {
+    //     files: {
+    //       '<%= yeoman.dist %>/scripts/scripts.js': [
+    //         '<%= yeoman.dist %>/scripts/scripts.js'
+    //       ]
+    //     }
+    //   }
+    // },
     // concat: {
     //   dist: {}
     // },
@@ -346,6 +362,7 @@ module.exports = function (grunt) {
             '*.html',
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
+            'styles/fonts/{,*/}*.*',
             'fonts/{,*/}*.*',
             'resources/{,*/}*.*'
           ]
@@ -435,6 +452,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'wiredep:test',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
@@ -452,10 +470,10 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
+    'uglify',
     'filerev',
     'replace:debugMode',
     'usemin',
-    'uglify',
     'htmlmin'
   ]);
 
