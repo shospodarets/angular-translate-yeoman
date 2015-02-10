@@ -241,7 +241,7 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              js: ['concat'],
               css: ['cssmin']
             },
             post: {}
@@ -276,15 +276,18 @@ module.exports = function (grunt) {
     //     }
     //   }
     // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
+    uglify: {
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/scripts/scripts.js': [
+            '<%= yeoman.dist %>/scripts/scripts.js'
+          ],
+          '<%= yeoman.dist %>/scripts/vendor.js': [
+            '<%= yeoman.dist %>/scripts/vendor.js'
+          ]
+        }
+      }
+    },
     // concat: {
     //   dist: {}
     // },
@@ -335,9 +338,9 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '.tmp/concat/scripts',
-          src: ['*.js', '!oldieshim.js'],
-          dest: '.tmp/concat/scripts'
+          cwd: '<%= yeoman.dist %>/scripts',
+          src: ['{,*/}*.js'],
+          dest: '<%= yeoman.dist %>/scripts'
         }]
       }
     },
@@ -423,7 +426,7 @@ module.exports = function (grunt) {
     replace: {
       // Sets DEBUG_MODE to FALSE in dist
       debugMode: {
-        src: ['<%= yeoman.dist %>/scripts/scripts*.js'],
+        src: ['<%= yeoman.dist %>/scripts/scripts.js'],
         overwrite: true,
         replacements: [
           {
@@ -434,7 +437,7 @@ module.exports = function (grunt) {
       },
       // Sets VERSION_TAG for cache busting
       versionTag: {
-        src: ['<%= yeoman.dist %>/scripts/scripts*.js'],
+        src: ['<%= yeoman.dist %>/scripts/scripts.js'],
         overwrite: true,
         replacements: [
           {
@@ -483,14 +486,14 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngAnnotate',
     'copy:dist',
     'cdnify',
     'cssmin',
-    'uglify',
-    'filerev',
     'replace:debugMode',
     'replace:versionTag',
+    'ngAnnotate',
+    'uglify',
+    'filerev',
     'usemin',
     'htmlmin'
   ]);
