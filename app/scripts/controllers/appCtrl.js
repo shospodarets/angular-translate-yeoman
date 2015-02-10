@@ -8,7 +8,9 @@
  * Common application controller
  */
 angular.module('translateApp')
-  .controller('AppCtrl', function ($scope, $rootScope, $translate) {
+  .controller('AppCtrl', function ($scope, $rootScope, $translate, $interval, VERSION_TAG) {
+    $rootScope.VERSION_TAG = VERSION_TAG;// for cache busting
+
     /**
      * $scope.locale setting
      */
@@ -23,4 +25,12 @@ angular.module('translateApp')
     $rootScope.$on('$routeChangeSuccess', function (event, current) {
       $scope.currentPath = current.$$route.originalPath;
     });
+
+    /**
+     * Current time
+     */
+    $scope.currentTime = Date.now();
+    $interval(function () {
+      $scope.currentTime = Date.now();
+    }, 1000);
   });

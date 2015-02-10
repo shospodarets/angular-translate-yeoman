@@ -165,23 +165,23 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       },
       test: {
         devDependencies: true,
         src: '<%= karma.unit.configFile %>',
-        ignorePath:  /\.\.\//,
-        fileTypes:{
+        ignorePath: /\.\.\//,
+        fileTypes: {
           js: {
             block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-              detect: {
-                js: /'(.*\.js)'/gi
-              },
-              replace: {
-                js: '\'{{filePath}}\','
-              }
+            detect: {
+              js: /'(.*\.js)'/gi
+            },
+            replace: {
+              js: '\'{{filePath}}\','
             }
           }
+        }
       },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -224,7 +224,8 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          //'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '!<%= yeoman.dist %>/images/no-filerev/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -381,6 +382,11 @@ module.exports = function (grunt) {
           cwd: 'bower_components/font-awesome/fonts/',
           src: '**/*',
           dest: '<%= yeoman.dist %>/fonts'
+        }, {
+          expand: true,
+          cwd: 'bower_components/angular-i18n/',
+          src: '*.js',
+          dest: '<%= yeoman.dist %>/bower_components/angular-i18n'
         }]
       },
       styles: {
@@ -414,8 +420,8 @@ module.exports = function (grunt) {
       }
     },
 
-    // Sets DEBUG_MODE to FALSE
     replace: {
+      // Sets DEBUG_MODE to FALSE in dist
       debugMode: {
         src: ['<%= yeoman.dist %>/scripts/scripts*.js'],
         overwrite: true,
@@ -423,6 +429,17 @@ module.exports = function (grunt) {
           {
             from: /\/\*DEBUG_MODE\*\/.{1,}\/\*DEBUG_MODE\*\//gi,
             to: '/*DEBUG_MODE*/false/*DEBUG_MODE*/'
+          }
+        ]
+      },
+      // Sets VERSION_TAG for cache busting
+      versionTag: {
+        src: ['<%= yeoman.dist %>/scripts/scripts*.js'],
+        overwrite: true,
+        replacements: [
+          {
+            from: /\/\*VERSION_TAG_START\*\/.{1,}\/\*VERSION_TAG_END\*\//gi,
+            to: '/*VERSION_TAG_START*/' + new Date().getTime() + '/*VERSION_TAG_END*/'
           }
         ]
       }
@@ -473,6 +490,7 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'replace:debugMode',
+    'replace:versionTag',
     'usemin',
     'htmlmin'
   ]);

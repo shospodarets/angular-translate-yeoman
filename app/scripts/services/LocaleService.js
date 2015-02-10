@@ -6,7 +6,7 @@
  * Service for setting/getting current locale
  */
 angular.module('translateApp')
-  .service('LocaleService', function ($translate, LOCALES, $rootScope) {
+  .service('LocaleService', function ($translate, LOCALES, $rootScope, tmhDynamicLocale) {
     'use strict';
     // VARS
     var localesObj = LOCALES.locales;
@@ -55,6 +55,11 @@ angular.module('translateApp')
     // EVENTS
     $rootScope.$on('$translateChangeSuccess', function (event, data) {
       document.documentElement.setAttribute('lang', data.language);// sets "lang" attribute to html
+
+      tmhDynamicLocale.set(data.language.toLocaleLowerCase().replace(/_/g, '-'));// load Angular locale
+    });
+
+    $rootScope.$on('$localeChangeSuccess', function () {
       stopLoadingAnimation();
     });
 
