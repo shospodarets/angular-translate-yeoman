@@ -165,7 +165,8 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath: /\.\.\//
+        ignorePath: /\.\.\//,
+        exclude: ['bower_components/github-fork-ribbon-css/gh-fork-ribbon.ie.css']
       },
       test: {
         devDependencies: true,

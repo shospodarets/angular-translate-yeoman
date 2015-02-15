@@ -56,7 +56,7 @@ angular.module('translateApp')
     $rootScope.$on('$translateChangeSuccess', function (event, data) {
       document.documentElement.setAttribute('lang', data.language);// sets "lang" attribute to html
 
-      tmhDynamicLocale.set(data.language.toLocaleLowerCase().replace(/_/g, '-'));// load Angular locale
+      tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));// load Angular locale
     });
 
     $rootScope.$on('$localeChangeSuccess', function () {

@@ -4,7 +4,7 @@
   "views.index.Contact": "Contact",
   "views.index.from the Yeoman team": "from the Yeoman team",
 
-  "views.main.'Allo, 'Allo!": "'Allo, 'Allo!",
+  "views.main.i18n for your AngularJS applications": "i18n for your AngularJS applications",
   "views.main.I'm Yeoman": "I'm Yeoman",
   "views.main.Always a pleasure scaffolding your apps.": "Always a pleasure scaffolding your apps.",
   "views.main.Splendid!": "Splendid!",
