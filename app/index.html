@@ -2,8 +2,8 @@
 <html class="no-js app-loading" ng-app="translateApp">
 <head>
   <meta charset="utf-8">
-  <title>AngularJS app translation</title>
-  <meta name="description" content="How to translate your AngularJS application without page reload">
+  <title ng-bind="pageTitle">i18n for your AngularJS applications</title>
+  <meta name="description" ng-attr-content="{{pageContent}}" content="How to translate your AngularJS applications without page reload with angular-translate">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
@@ -17,9 +17,6 @@
   <!-- endbuild -->
 </head>
 <body ng-controller="AppCtrl">
-<!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
 
 <!-- Add your site or application content here -->
 <div id="app-loading-wrapper" shown-when-loading>
@@ -84,9 +81,12 @@
 </div>
 
 <!-- BOTTOM RIGHT GITHUB RIBBON -->
-<div class="github-fork-ribbon-wrapper right-bottom">
+<div class="github-fork-ribbon-wrapper right-bottom" hidden-when-loading>
   <div class="github-fork-ribbon">
-    <a href="https://github.com/malyw/angular-translate-yeoman">Fork me on GitHub</a>
+    <a href="https://github.com/malyw/angular-translate-yeoman">
+      {{"views.Fork me on" | translate}}
+      GitHub
+    </a>
   </div>
 </div>
 

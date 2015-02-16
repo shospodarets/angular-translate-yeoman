@@ -1,4 +1,10 @@
 {
+  "PAGE_TITLE": "i18n для ваших AngularJS приложений",
+  "PAGE_CONTENT": "Как переводить ваши AngularJS приложения без перезагрузки страницы с angular-translate",
+
+
+  "views.Fork me on": "Создай Fork на",
+
   "views.index.Home": "Главная",
   "views.index.About": "Обо мне",
   "views.index.Contact": "Контакты",
@@ -22,7 +28,6 @@
   "views.about.JS, HTML and CSS enthusiast...": "JS, HTML and CSS энтузиаст. Наслаждаюсь жизнью :)",
 
   "views.contacts.Follow me on": "Подпишись на мой",
-  "views.contacts.Fork me on": "Создай Fork на",
   "views.contacts.My": "Мой",
 
 

@@ -9,15 +9,27 @@
  */
 angular.module('translateApp')
   .controller('AppCtrl', function ($scope, $rootScope, $translate, $interval, VERSION_TAG) {
-    $rootScope.VERSION_TAG = VERSION_TAG;// for cache busting
+    /**
+     * Cache busting
+     */
+    $rootScope.VERSION_TAG = VERSION_TAG;
 
     /**
-     * $scope.locale setting
+     * Translations for the view
+     */
+    var pageTitleTranslationId = 'PAGE_TITLE';
+    var pageContentTranslationId = 'PAGE_CONTENT';
+
+    $translate(pageTitleTranslationId, pageContentTranslationId)
+      .then(function (translatedPageTitle, translatedPageContent) {
+        $rootScope.pageTitle = translatedPageTitle;
+        $rootScope.pageContent = translatedPageContent;
+      });
+
+    /**
+     * $scope.locale
      */
     $scope.locale = $translate.use();
-    $rootScope.$on('$translateChangeSuccess', function (event, data) {
-      $scope.locale = data.language;
-    });
 
     /**
      * Provides info about current route path
@@ -33,4 +45,14 @@ angular.module('translateApp')
     $interval(function () {
       $scope.currentTime = Date.now();
     }, 1000);
+
+
+    /**
+     * EVENTS
+     */
+    $rootScope.$on('$translateChangeSuccess', function (event, data) {
+      $scope.locale = data.language;
+      $rootScope.pageTitle = $translate.instant(pageTitleTranslationId);
+      $rootScope.pageContent = $translate.instant(pageContentTranslationId);
+    });
   });

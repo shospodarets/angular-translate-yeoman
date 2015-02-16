@@ -1,4 +1,10 @@
 {
+  "PAGE_TITLE": "i18n for your AngularJS applications",
+  "PAGE_CONTENT": "How to translate your AngularJS applications without page reload with angular-translate",
+
+
+  "views.Fork me on": "Fork me on",
+
   "views.index.Home": "Home",
   "views.index.About": "About",
   "views.index.Contact": "Contact",
@@ -22,7 +28,6 @@
   "views.about.JS, HTML and CSS enthusiast...": "JS, HTML and CSS enthusiast. Enjoying life :)",
 
   "views.contacts.Follow me on": "Follow me on",
-  "views.contacts.Fork me on": "Fork me on",
   "views.contacts.My": "My",
 
 
