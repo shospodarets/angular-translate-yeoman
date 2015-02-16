@@ -1,10 +1,16 @@
 {
+  "PAGE_TITLE": "i18n for your AngularJS applications",
+  "PAGE_CONTENT": "How to translate your AngularJS applications without page reload with angular-translate",
+
+
+  "views.Fork me on": "Fork me on",
+
   "views.index.Home": "Home",
   "views.index.About": "About",
   "views.index.Contact": "Contact",
   "views.index.from the Yeoman team": "from the Yeoman team",
 
-  "views.main.'Allo, 'Allo!": "'Allo, 'Allo!",
+  "views.main.i18n for your AngularJS applications": "i18n for your AngularJS applications",
   "views.main.I'm Yeoman": "I'm Yeoman",
   "views.main.Always a pleasure scaffolding your apps.": "Always a pleasure scaffolding your apps.",
   "views.main.Splendid!": "Splendid!",
@@ -22,7 +28,6 @@
   "views.about.JS, HTML and CSS enthusiast...": "JS, HTML and CSS enthusiast. Enjoying life :)",
 
   "views.contacts.Follow me on": "Follow me on",
-  "views.contacts.Fork me on": "Fork me on",
   "views.contacts.My": "My",
 
 
