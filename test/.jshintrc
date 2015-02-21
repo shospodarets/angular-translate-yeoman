@@ -18,7 +18,6 @@
   "strict": true,
   "trailing": true,
   "smarttabs": true,
-  "multistr": true,
   "jasmine": true,
   "globals": {
     "angular": false,
