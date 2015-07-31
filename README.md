@@ -2,6 +2,8 @@
 
 ### To start working with the project run:
 
+$ gem install compass
+
 $ npm install
 
 $ bower install
