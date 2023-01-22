@@ -14,4 +14,4 @@ $ grunt  - to build the project
 
 $ grunt serve  - for preview
 
-### <b>[Demo](http://malyw.github.io/angular-translate-yeoman/dist/)</b>
+### <b>[Demo](http://shospodarets.github.io/angular-translate-yeoman/dist/)</b>
